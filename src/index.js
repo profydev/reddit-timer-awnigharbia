@@ -1,17 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import './styles/normalize.css';
+import { Normalize } from 'styled-normalize';
+import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './styles/GlobalStyles';
 import Router from './routes/index';
+import theme from './theme';
 
 // eslint-disable-next-line react/jsx-filename-extension
 ReactDOM.render(
-  <React.StrictMode>
+  <ThemeProvider theme={theme}>
+    <Normalize />
     <GlobalStyles />
     <BrowserRouter>
       <Router />
     </BrowserRouter>
-  </React.StrictMode>,
+  </ThemeProvider>,
   document.getElementById('root'),
 );
