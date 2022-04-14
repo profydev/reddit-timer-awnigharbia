@@ -14,12 +14,10 @@ const Img = styled.img`
   display: block;
 `;
 
-const StyledNav = styled.nav`
-  a {
-    margin-left: 26px;
-    text-decoration: none;
-    color: #636363;
-  }
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #636363;
+  margin-left: 26px;
 `;
 
 export default function Header() {
@@ -28,11 +26,11 @@ export default function Header() {
       <Link to="/">
         <Img src={Logo} />
       </Link>
-      <StyledNav>
-        <Link to="/search/javascript">Search</Link>
-        <Link to="/#how-it-works">How it works</Link>
-        <Link to="/#about">About</Link>
-      </StyledNav>
+      <nav>
+        <StyledLink to="/search/javascript">Search</StyledLink>
+        <StyledLink to="/#how-it-works">How it works</StyledLink>
+        <StyledLink to="/#about">About</StyledLink>
+      </nav>
     </StyledHeader>
   );
 }
