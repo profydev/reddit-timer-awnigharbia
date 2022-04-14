@@ -29,7 +29,7 @@ export default function Header() {
         <Img src={Logo} />
       </Link>
       <StyledNav>
-        <Link to="/search">Search</Link>
+        <Link to="/search/javascript">Search</Link>
         <Link to="/#how-it-works">How it works</Link>
         <Link to="/#about">About</Link>
       </StyledNav>
