@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Logo from '../assets/logo.svg';
+import { ReactComponent } from '../assets/logo.svg';
 
 const StyledHeader = styled.header`
   display: flex;
@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
   padding: 41px 80px;
 `;
 
-const Img = styled.img`
+const Logo = styled(ReactComponent)`
   display: block;
 `;
 
@@ -24,7 +24,7 @@ export default function Header() {
   return (
     <StyledHeader>
       <Link to="/">
-        <Img src={Logo} />
+        <Logo />
       </Link>
       <nav>
         <StyledLink to="/search/javascript">Search</StyledLink>
