@@ -2,12 +2,16 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
+import { ThemeProvider } from 'styled-components';
 import App from './App';
+import theme from './theme';
 
 function setup() {
   return render(
     <MemoryRouter>
-      <App />
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
     </MemoryRouter>,
   );
 }
@@ -37,5 +41,33 @@ describe('Header', () => {
     setup();
     screen.getByRole('link', { name: /How it works/i });
     screen.getByRole('link', { name: /about/i });
+  });
+});
+
+describe('Footer', () => {
+  it('"Pofy.dev" pointing to the correct page', () => {
+    setup();
+
+    screen.getByRole('link', { name: /profy.dev/i });
+  });
+
+  it('"FooterLogo" points to the correct page', () => {
+    setup();
+
+    const link = screen.getByRole('link', { name: 'sign.svg' });
+    userEvent.click(link);
+
+    const header = screen.getByRole('heading', { name: /home page/i });
+    expect(header).toBeInTheDocument();
+  });
+
+  it('"Terms" points to the correct page', () => {
+    setup();
+
+    const link = screen.getByRole('link', { name: /terms/i });
+    userEvent.click(link);
+
+    const header = screen.getByRole('heading', { name: /terms/i });
+    expect(header).toBeInTheDocument();
   });
 });
