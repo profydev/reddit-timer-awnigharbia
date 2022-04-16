@@ -53,4 +53,11 @@ export default createGlobalStyle`
         line-height: ${(props) => props.theme.font.lineHeight.default};
         color: ${(props) => props.theme.color.text};
     }
+
+    h1 {
+        font-family: ${(props) => props.theme.font.family.headline};
+        font-weight: 400;
+        font-size: ${(props) => props.theme.font.size.headline};
+        color: black;
+    }
 `;

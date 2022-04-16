@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { ReactComponent } from '../assets/logo.svg';
+import DefaultSubreddit from '../constants/Constants';
 
 const StyledHeader = styled.header`
   display: flex;
@@ -27,7 +28,7 @@ export default function Header() {
         <Logo />
       </Link>
       <nav>
-        <StyledLink to="/search/javascript">Search</StyledLink>
+        <StyledLink to={`/search/${DefaultSubreddit}`}>Search</StyledLink>
         <StyledLink to="/#how-it-works">How it works</StyledLink>
         <StyledLink to="/#about">About</StyledLink>
       </nav>

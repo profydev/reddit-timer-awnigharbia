@@ -2,6 +2,7 @@ const theme = {
   color: {
     text: '#93918f',
     link: '#636363',
+    button: '#fdb755',
   },
   font: {
     family: {
@@ -10,6 +11,7 @@ const theme = {
     },
     size: {
       default: '16px',
+      headline: '38px',
     },
     lineHeight: {
       default: 1.69,
