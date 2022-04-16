@@ -12,6 +12,11 @@ const FooterLink = styled(Link)`
   text-decoration: none;
 `;
 
+const FooterAnchor = styled.a`
+  color: ${(props) => props.theme.color.link};
+  text-decoration: none;
+`;
+
 const FooterStyled = styled.footer`
   display: flex;
   flex-direction: row;
@@ -22,9 +27,9 @@ const FooterStyled = styled.footer`
 export default function Footer() {
   return (
     <FooterStyled>
-      <FooterLink to="//profy.dev/employers" target="_blank">
+      <FooterAnchor to="https://profy.dev/employers" target="_blank">
         profy.dev
-      </FooterLink>
+      </FooterAnchor>
       <Link to="/">
         <FooterLogo />
       </Link>
