@@ -16,7 +16,7 @@ const Logo = styled(ReactComponent)`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: #636363;
+  color: ${(props) => props.theme.color.link};
   margin-left: 26px;
 `;
 
