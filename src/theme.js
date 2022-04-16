@@ -2,6 +2,7 @@ const theme = {
   color: {
     text: '#93918f',
     link: '#636363',
+    button: '#fdb755',
   },
   font: {
     family: {

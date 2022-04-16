@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { ReactComponent } from '../assets/table.svg';
+import DefaultSubreddit from '../constants/Constants';
 
 const Wrapper = styled.div`
   display: flex;
@@ -10,10 +11,6 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-family: ${(props) => props.theme.font.family.headline};
-  font-weight: 400;
-  font-size: ${(props) => props.theme.font.size.headline};
-  color: black;
   margin-bottom: 20px;
 `;
 
@@ -27,7 +24,7 @@ const Button = styled.button`
   color: white;
   border-radius: 4px;
   padding: 13.5px 15px;
-  background-color: #fdb755;
+  background-color: ${({ theme }) => theme.color.button};
 `;
 
 const Subreddit = styled.h4`
@@ -37,6 +34,7 @@ const Subreddit = styled.h4`
 
 const HeatMap = styled(ReactComponent)`
   display: block;
+  max-width: 100%;
 `;
 
 export default function HeroSection() {
@@ -47,11 +45,14 @@ export default function HeroSection() {
         Greate timing, great results! Find the best time to post on your
         subreddit
       </Subtitle>
-      <Button as={Link} to="/search/javascript">
+      <Button as={Link} to={`/search/${DefaultSubreddit}`}>
         SHOW ME THE BEST TIME
       </Button>
-      <Subreddit>r/javascript</Subreddit>
-      <Link to="/search/javascript">
+      <Subreddit>
+        r/
+        {DefaultSubreddit}
+      </Subreddit>
+      <Link to={`/search/${DefaultSubreddit}`}>
         <HeatMap />
       </Link>
     </Wrapper>
