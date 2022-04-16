@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Header from './components/header';
-import Search from './pages/search';
-import Home from './pages/home';
-import Terms from './components/terms';
+import Header from './components/Header';
+import Search from './pages/Search';
+import Home from './pages/Home';
+import Terms from './components/Terms';
 
 function App() {
   return (

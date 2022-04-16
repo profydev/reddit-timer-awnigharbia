@@ -1,10 +1,11 @@
 import React from 'react';
-import Footer from '../components/footer';
+import Footer from '../components/Footer';
+import HeroSection from '../components/HeroSection';
 
 export default function Home() {
   return (
     <div>
-      <h1>Home Page</h1>
+      <HeroSection />
       <Footer />
     </div>
   );

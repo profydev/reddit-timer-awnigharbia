@@ -23,7 +23,9 @@ describe('Header', () => {
     const link = screen.getByRole('link', { name: 'logo.svg' });
     userEvent.click(link);
 
-    const header = screen.getByRole('heading', { name: /home page/i });
+    const header = screen.getByRole('heading', {
+      name: /no reactions to your reddit posts/i,
+    });
     expect(header).toBeInTheDocument();
   });
 
@@ -44,6 +46,52 @@ describe('Header', () => {
   });
 });
 
+describe('HeroSection', () => {
+  it('Containts title, subtitle and default subreddit', () => {
+    setup();
+    const title = screen.getByRole('heading', {
+      name: /no reactions to your reddit posts/i,
+    });
+    const subtitle = screen.getByText(
+      /greate timing, great results! Find the best time to post on your subreddit/i,
+    );
+    const defaultSubreddit = screen.getByRole('heading', {
+      name: /r\/javascript/i,
+    });
+    expect(title).toBeInTheDocument();
+    expect(subtitle).toBeInTheDocument();
+    expect(defaultSubreddit).toBeInTheDocument();
+  });
+
+  it('"Show me the best time" points to correct page', () => {
+    setup();
+    const button = screen.getByRole('link', {
+      name: /show me the best time/i,
+    });
+    userEvent.click(button);
+
+    const header = screen.getByRole('heading', {
+      name: /searching for the best time to post onjavascript/i,
+    });
+
+    expect(header).toBeInTheDocument();
+  });
+
+  it('"heapmap image" points to correct page', () => {
+    setup();
+    const button = screen.getByRole('link', {
+      name: 'table.svg',
+    });
+    userEvent.click(button);
+
+    const header = screen.getByRole('heading', {
+      name: /searching for the best time to post onjavascript/i,
+    });
+
+    expect(header).toBeInTheDocument();
+  });
+});
+
 describe('Footer', () => {
   it('"Pofy.dev" pointing to the correct page', () => {
     setup();
@@ -58,7 +106,9 @@ describe('Footer', () => {
     const link = screen.getByRole('link', { name: 'sign.svg' });
     userEvent.click(link);
 
-    const header = screen.getByRole('heading', { name: /home page/i });
+    const header = screen.getByRole('heading', {
+      name: /no reactions to your reddit posts/i,
+    });
     expect(header).toBeInTheDocument();
   });
 
