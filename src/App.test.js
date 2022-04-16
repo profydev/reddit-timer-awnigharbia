@@ -49,7 +49,6 @@ describe('Footer', () => {
     setup();
 
     const link = screen.getByText('profy.dev');
-    screen.debug(link);
     expect(link).toHaveAttribute('href', 'https://profy.dev/employers');
   });
 

@@ -8,32 +8,33 @@ const FooterLogo = styled(ReactComponent)`
 `;
 
 const FooterLink = styled(Link)`
+  flex: 1;
   color: ${(props) => props.theme.color.link};
   text-decoration: none;
 `;
 
-const FooterAnchor = styled.a`
-  color: ${(props) => props.theme.color.link};
-  text-decoration: none;
+const TermsLink = styled(FooterLink)`
+  text-align: right;
 `;
 
 const FooterStyled = styled.footer`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 32px 250px;
+  width: 100%;
+  max-width: 940px;
+  margin: auto;
+  padding: 0 20px;
 `;
 
 export default function Footer() {
   return (
     <FooterStyled>
-      <FooterAnchor href="https://profy.dev/employers" target="_blank">
+      <FooterLink as="a" href="https://profy.dev/employers" target="_blank">
         profy.dev
-      </FooterAnchor>
+      </FooterLink>
       <Link to="/">
         <FooterLogo />
       </Link>
-      <FooterLink to="/terms">Terms & Privacy</FooterLink>
+      <TermsLink to="/terms">Terms & Privacy</TermsLink>
     </FooterStyled>
   );
 }
