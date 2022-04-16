@@ -27,7 +27,7 @@ const FooterStyled = styled.footer`
 export default function Footer() {
   return (
     <FooterStyled>
-      <FooterAnchor to="https://profy.dev/employers" target="_blank">
+      <FooterAnchor href="https://profy.dev/employers" target="_blank">
         profy.dev
       </FooterAnchor>
       <Link to="/">

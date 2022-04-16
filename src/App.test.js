@@ -48,7 +48,9 @@ describe('Footer', () => {
   it('"Pofy.dev" pointing to the correct page', () => {
     setup();
 
-    screen.getByRole('link', { name: /profy.dev/i });
+    const link = screen.getByText('profy.dev');
+    screen.debug(link);
+    expect(link).toHaveAttribute('href', 'https://profy.dev/employers');
   });
 
   it('"FooterLogo" points to the correct page', () => {
