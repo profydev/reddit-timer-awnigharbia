@@ -6,7 +6,7 @@
     "cypress/globals": true
   },
   "parser": "babel-eslint",
-  "extends": ["airbnb"],
+  "extends": ["airbnb", "prettier"],
   "plugins": ["cypress", "react-hooks"],
   "rules": {
     "cypress/no-assigning-return-values": "error",
