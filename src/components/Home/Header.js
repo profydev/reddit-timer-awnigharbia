@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { ReactComponent } from '../assets/logo.svg';
-import DefaultSubreddit from '../constants/Constants';
+import { ReactComponent } from '../../assets/logo.svg';
+import DefaultSubreddit from '../../constants/Constants';
 
 const StyledHeader = styled.header`
   display: flex;
@@ -16,7 +16,6 @@ const Logo = styled(ReactComponent)`
 `;
 
 const StyledLink = styled(Link)`
-  text-decoration: none;
   color: ${(props) => props.theme.color.link};
   margin-left: 26px;
 `;

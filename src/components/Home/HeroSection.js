@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { ReactComponent } from '../assets/table.svg';
-import DefaultSubreddit from '../constants/Constants';
+import { ReactComponent } from '../../assets/table.svg';
+import DefaultSubreddit from '../../constants/Constants';
 
 const Wrapper = styled.div`
   display: flex;
@@ -20,7 +20,6 @@ const Subtitle = styled.p`
 `;
 
 const Button = styled.button`
-  text-decoration: none;
   color: white;
   border-radius: 4px;
   padding: 13.5px 15px;

@@ -60,4 +60,8 @@ export default createGlobalStyle`
         font-size: ${(props) => props.theme.font.size.headline};
         color: black;
     }
+
+    a {
+        text-decoration: none;
+    }
 `;
