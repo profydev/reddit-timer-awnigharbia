@@ -6,7 +6,7 @@
     "cypress/globals": true
   },
   "parser": "babel-eslint",
-  "extends": ["airbnb"],
+  "extends": ["airbnb", "prettier"],
   "plugins": ["cypress", "react-hooks"],
   "rules": {
     "cypress/no-assigning-return-values": "error",
@@ -16,6 +16,8 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
+    "react/prop-types": "off",
+    "react/jsx-one-expression-per-line": "off",
     "react/jsx-wrap-multilines": [
       "error",
       { "arrow": true, "return": true, "declaration": true }
